@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Coach</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('/static/background.jpg') no-repeat center center fixed; /* Background image from the static folder */
+            background-size: cover; /* Ensure the background image covers the screen */
+            color: white; /* Text color */
+        }
+
+        /* Container styles */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header styling with blur effect */
+        header {
+            background-color: rgba(0, 0, 0, 0.6); /* Slight dark overlay for readability */
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            backdrop-filter: blur(8px); /* Apply blur effect */
+            -webkit-backdrop-filter: blur(8px); /* For Safari */
+            border-radius: 10px; /* Optional: rounded corners */
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* About Section styling with blur effect */
+        #about {
+            padding: 40px 0;
+            background-color: rgba(255, 255, 255, 0.3); /* Light background to contrast the image */
+            backdrop-filter: blur(8px); /* Apply blur effect */
+            -webkit-backdrop-filter: blur(8px); /* For Safari */
+            border-radius: 10px; /* Optional: rounded corners */
+        }
+
+        #about h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Main content section */
+        .content {
+            padding: 20px;
+            backdrop-filter: blur(8px); /* Apply blur effect to all content */
+            -webkit-backdrop-filter: blur(8px); /* For Safari */
+        }
+
+        /* Button styles */
+        .btn {
+            padding: 10px 20px;
+            background-color: #1E90FF; /* Blue color for buttons */
+            color: white;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1C86EE; /* Darker blue for hover effect */
+        }
+
+        /* Audio Section */
+        .audio-section, .transcription, .feedback {
+            margin: 20px 0;
+        }
+
+        /* Transcription Section */
+        .transcription {
+            margin: 20px 0;
+            color: black; /* Set text color to black */
+        }
+
+        /* Feedback Section */
+        .feedback {
+            margin: 20px 0;
+            color: black; /* Set text color to black */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Interview Coach 🎤</h1>
+            <p>Your AI-powered interview coach to help you ace your next interview! 🎯</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About the Interview Coach</h2>
+            <p>The Interview Coach is an innovative platform that helps individuals improve their interview skills through voice-based feedback. By recording your answers, the app provides real-time transcription, emotional analysis, and feedback on your tone, pace, and clarity.</p>
+            <p>Whether you’re preparing for a job interview or practicing for an important presentation, our app offers personalized suggestions to help you present yourself with confidence and professionalism. Keep practicing, and with every session, you’ll get better!</p>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <div class="content">
+        <!-- Recording Controls Section -->
+        <div id="recording-controls">
+            <button id="start-btn" class="btn">Start Recording 🟢</button>
+            <button id="stop-btn" class="btn" disabled>Stop Recording 🔴</button>
+        </div>
+
+        <!-- Audio Playback Section -->
+        <div class="audio-section">
+            <h2>Recorded Audio 🎧:</h2>
+            <audio id="audio-player" controls></audio>
+        </div>
+
+        <!-- Transcription Section -->
+        <div class="transcription">
+            <h3>Transcription ✍️:</h3>
+            <p id="transcription-text">Your transcription will appear here after recording 📝.</p>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="feedback">
+            <h3>Feedback 📝:</h3>
+            <p id="feedback-text">Your feedback will appear here after transcription 📊.</p>
+        </div>
+    </div>
+
+</body>
+</html>
